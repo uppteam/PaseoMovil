@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margen"
+            android:layout_marginLeft="@dimen/margen"
+            android:layout_marginRight="@dimen/margen"
+            android:text="@string/app_name"
+            android:textColor="@color/letras"
+            android:textSize="@dimen/titulo"
+            />
+
+        <ImageView
+            android:id="@+id/logo_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margen"
+            android:layout_marginLeft="@dimen/margen"
+            android:layout_marginRight="@dimen/margen"
+            android:src="@drawable/logo_s"
+            android:layout_below="@+id/title_home"
+            />
+
+        <TextView
+            android:id="@+id/content_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margen"
+            android:layout_marginLeft="@dimen/margen"
+            android:layout_marginRight="@dimen/margen"
+            android:textColor="@color/letras"
+            android:text="@string/introduccion"
+            android:layout_below="@+id/logo_home"
+            />
+
+    </RelativeLayout>
+</ScrollView>

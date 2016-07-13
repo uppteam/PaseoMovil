@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Paseomóvil</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="home_item">Inicio</string>
+    <string name="rutas_item">Rutas</string>
+    <string name="ubicacion_item">Mi ubicación</string>
+    <string name="map_item">Mapa</string>
+    <string name="facturas_item">Recomendados</string>
+    <string name="exit">Salir</string>
+    <string name="configuracion_item">Acciones</string>
+    <string name="title_activity_maps">Mapa</string>
+    <string name="introduccion">Paseomóvil es una aplicación para tú dispositivo Android cuya finalidad es mostrarte
+        las rutas de transporte de la ciudad de Pachuca\n\nPara cualquier información, duda, sugerencia o comentario
+        contactanos usando la siguiente dirección de correo eléctronico:\n\nplaceholder@gmail.com</string>
+    <string name="nombre_transicion_imagen">Elemento</string>
+</resources>
+
