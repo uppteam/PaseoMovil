@@ -111,6 +111,12 @@ public class UbicacionActivity extends Fragment implements OnMapReadyCallback {
         }
         Location location = locationManager.getLastKnownLocation(provider);
 
+        if (location == null) {
+            LatLng latlong = new LatLng(20.117, -98.7333);
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(latlong));
+            mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
+        }
+
         LocationListener listener  = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
