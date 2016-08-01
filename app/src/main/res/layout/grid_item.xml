@@ -16,8 +16,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:background="@color/blackColor"
-        android:maxLines="1"
-        android:padding="16dp"
+        android:maxLines="2"
+        android:padding="8dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
         android:textColor="@android:color/white" />
 

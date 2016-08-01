@@ -1,39 +1,39 @@
-package com.makingdreams.dani.paseomovil;
+package com.makingdreams.dani.paseomovil.rutasConvencional;
 
-import android.content.Intent;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toast;
 
-import com.makingdreams.dani.paseomovil.rutasConvencional.Convencional;
-
+import com.makingdreams.dani.paseomovil.PlaceholderFragment;
+import com.makingdreams.dani.paseomovil.SeleccionRutas;
+import com.makingdreams.dani.paseomovil.UbicacionActivity;
+import com.makingdreams.dani.paseomovil.R;
 
 /**
- * Created by dani on 23/06/16.
+ * Created by dani on 31/07/16.
  */
-public class SeleccionRutas extends Fragment implements AdapterView.OnItemClickListener {
+public class Convencional extends Fragment implements AdapterView.OnItemClickListener {
 
     private GridView gridView;
-    private AdaptadorRutasVehiculos adaptador;
+    private AdaptadorConvencional adaptador;
     public static final String ARG_SECTION_TITLE = "section_number";
 
-    public static SeleccionRutas newInstance(String sectionTitle) {
-        SeleccionRutas fragment = new SeleccionRutas();
+    public static Convencional newInstance(String sectionTitle) {
+        Convencional fragment = new Convencional();
         Bundle args = new Bundle();
         args.putString(ARG_SECTION_TITLE, sectionTitle);
         fragment.setArguments(args);
         return fragment;
     }
 
-    public SeleccionRutas() {
+    public Convencional() {
     }
 
     @Override
@@ -42,7 +42,7 @@ public class SeleccionRutas extends Fragment implements AdapterView.OnItemClickL
         View view = inflater.inflate(R.layout.rutas_principal, container, false);
         gridView = (GridView) view.findViewById(R.id.grid);
         if (gridView != null) {
-            adaptador = new AdaptadorRutasVehiculos(getContext().getApplicationContext());
+            adaptador = new AdaptadorConvencional(getContext().getApplicationContext());
             gridView.setAdapter(adaptador);
         }
 
@@ -57,13 +57,8 @@ public class SeleccionRutas extends Fragment implements AdapterView.OnItemClickL
         args.putString(PlaceholderFragment.ARG_SECTION_TITLE, "temporalTitle");
         Fragment fragment;
 
-        RutasVehiculos tipo = (RutasVehiculos) parent.getItemAtPosition(position);
-        if (tipo.getNombre().equals("Transporte Convencional"))
-            fragment = Convencional.newInstance("Convencional");
-        else if (tipo.getNombre().equals("Tuzobus"))
-            fragment = SeleccionRutas.newInstance("Tuzobus");
-        else
-            fragment = SeleccionRutas.newInstance("Alimentadora");
+        RutasConvencional tipo = (RutasConvencional) parent.getItemAtPosition(position);
+        fragment = UbicacionActivity.newInstance("Convencional");
 
         fragment.setArguments(args);
         FragmentManager fragmentManager = getFragmentManager();
@@ -74,4 +69,5 @@ public class SeleccionRutas extends Fragment implements AdapterView.OnItemClickL
                 .commit();
 
     }
+
 }

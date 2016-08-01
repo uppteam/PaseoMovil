@@ -9,8 +9,11 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.makingdreams.dani.paseomovil.rutasConvencional.Convencional;
 
 public class MainActivity extends AppCompatActivity {
     /**
@@ -113,19 +116,19 @@ public class MainActivity extends AppCompatActivity {
         String ubicacion = getResources().getString(R.string.ubicacion_item);
         String mapas = getResources().getString(R.string.map_item);
         String salir = getResources().getString(R.string.exit);
-        if (title == inicio) {
+        if (title.equals(inicio)) {
             fragment = Inicio.newInstance(title);
         }
-        else if (title == rutas) {
+        else if (title.equals(rutas)) {
             fragment = SeleccionRutas.newInstance(title);
         }
-        else if (title == ubicacion) {
+        else if (title.equals(ubicacion)) {
             fragment = UbicacionActivity.newInstance(title);
         }
-        else if (title == mapas) {
+        else if (title.equals(mapas)) {
             fragment = UbicacionActivity.newInstance(title);
         }
-        else if (title == salir) {
+        else if (title.equals(salir)) {
             close_app();
         }
 
@@ -133,13 +136,22 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager
                 .beginTransaction()
+                .addToBackStack(null)
                 .replace(R.id.main_content, fragment)
                 .commit();
 
         drawerLayout.closeDrawers(); // Cerrar drawer
 
         setTitle(title); // Setear título actual
+    }
 
+    @Override
+    public void onBackPressed() {
+        if (getFragmentManager().getBackStackEntryCount() > 0) {
+            getFragmentManager().popBackStack();
+        } else {
+            super.onBackPressed();
+        }
     }
 
     public void reload_app(){

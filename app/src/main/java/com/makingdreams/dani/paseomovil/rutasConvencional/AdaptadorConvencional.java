@@ -1,5 +1,8 @@
-package com.makingdreams.dani.paseomovil;
+package com.makingdreams.dani.paseomovil.rutasConvencional;
 
+/**
+ * Created by dani on 31/07/16.
+ */
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,28 +10,28 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.support.v4.app.Fragment;
 
 import com.bumptech.glide.Glide;
+import com.makingdreams.dani.paseomovil.R;
 
 /**
  * Created by dani on 23/06/16.
  */
-public class AdaptadorRutasVehiculos extends BaseAdapter {
+public class AdaptadorConvencional extends BaseAdapter {
     private Context context;
 
-    public AdaptadorRutasVehiculos(Context context) {
+    public AdaptadorConvencional(Context context) {
         this.context = context;
     }
 
     @Override
     public int getCount() {
-        return RutasVehiculos.ITEMS.length;
+        return RutasConvencional.ITEMS.length;
     }
 
     @Override
-    public RutasVehiculos getItem(int position) {
-        return RutasVehiculos.ITEMS[position];
+    public RutasConvencional getItem(int position) {
+        return RutasConvencional.ITEMS[position];
     }
 
     @Override
@@ -47,7 +50,7 @@ public class AdaptadorRutasVehiculos extends BaseAdapter {
         ImageView imagenRuta = (ImageView) view.findViewById(R.id.imagen_coche);
         TextView nombreRuta = (TextView) view.findViewById(R.id.nombre_coche);
 
-        final RutasVehiculos item = getItem(position);
+        final RutasConvencional item = getItem(position);
         Glide.with(imagenRuta.getContext())
                 .load(item.getIdDrawable())
                 .into(imagenRuta);
