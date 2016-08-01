@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/id_ruta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margen"
+            android:layout_marginLeft="@dimen/margen"
+            android:layout_marginRight="@dimen/margen"
+            android:textColor="@color/letras"
+            android:textSize="@dimen/titulo"
+            />
+
+        <ImageView
+            android:id="@+id/img_ruta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margen"
+            android:layout_marginLeft="@dimen/margen"
+            android:layout_marginRight="@dimen/margen"
+            android:layout_below="@+id/id_ruta"
+            />
+
+        <TextView
+            android:id="@+id/nombre_ruta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margen"
+            android:layout_marginLeft="@dimen/margen"
+            android:layout_marginRight="@dimen/margen"
+            android:textColor="@color/letras"
+            android:textSize="@dimen/titulo"
+            android:text="@string/titulo_listado_ruta"
+            android:layout_below="@+id/img_ruta"
+            />
+
+        <ListView
+            android:id="@+id/list_lugares"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:headerDividersEnabled="false"
+            android:footerDividersEnabled="true"
+            android:divider="@drawable/list_divider"
+            android:dividerHeight="1dip"
+            android:textColor="@color/textColor"
+            android:background="@color/colorPrimary"
+            android:layout_below="@+id/nombre_ruta"
+            android:layout_marginLeft="@dimen/margen"
+            android:layout_marginRight="@dimen/margen"
+            android:layout_marginTop="@dimen/margen"
+            android:layout_marginBottom="@dimen/margen"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

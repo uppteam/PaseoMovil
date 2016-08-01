@@ -3,18 +3,14 @@ package com.makingdreams.dani.paseomovil.rutasConvencional;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.Toast;
 
-import com.makingdreams.dani.paseomovil.PlaceholderFragment;
-import com.makingdreams.dani.paseomovil.SeleccionRutas;
-import com.makingdreams.dani.paseomovil.UbicacionActivity;
 import com.makingdreams.dani.paseomovil.R;
+import com.makingdreams.dani.paseomovil.VisualizadorRutas;
 
 /**
  * Created by dani on 31/07/16.
@@ -53,14 +49,10 @@ public class Convencional extends Fragment implements AdapterView.OnItemClickLis
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Bundle args = new Bundle();
-        args.putString(PlaceholderFragment.ARG_SECTION_TITLE, "temporalTitle");
         Fragment fragment;
-
         RutasConvencional tipo = (RutasConvencional) parent.getItemAtPosition(position);
-        fragment = UbicacionActivity.newInstance("Convencional");
+        fragment = VisualizadorRutas.newInstance(tipo.getNombre(), tipo.getIdDrawable(), tipo.getLugares());
 
-        fragment.setArguments(args);
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager
                 .beginTransaction()
