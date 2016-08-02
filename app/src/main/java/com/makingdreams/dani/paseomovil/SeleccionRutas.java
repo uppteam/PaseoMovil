@@ -13,7 +13,9 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
+import com.makingdreams.dani.paseomovil.rutasAlimentadoras.Alimentadoras;
 import com.makingdreams.dani.paseomovil.rutasConvencional.Convencional;
+import com.makingdreams.dani.paseomovil.rutasTuzobus.Tuzobus;
 
 
 /**
@@ -61,9 +63,9 @@ public class SeleccionRutas extends Fragment implements AdapterView.OnItemClickL
         if (tipo.getNombre().equals("Transporte Convencional"))
             fragment = Convencional.newInstance("Convencional");
         else if (tipo.getNombre().equals("Tuzobus"))
-            fragment = SeleccionRutas.newInstance("Tuzobus");
+            fragment = Tuzobus.newInstance("Tuzobus");
         else
-            fragment = SeleccionRutas.newInstance("Alimentadora");
+            fragment = Alimentadoras.newInstance("Alimentadora");
 
         fragment.setArguments(args);
         FragmentManager fragmentManager = getFragmentManager();
